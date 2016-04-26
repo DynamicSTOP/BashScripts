@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#
+# this one makes diff between staging and production
+# and shows you commands that will update production
+# rm isn't included
+#
+# yeah, i know that there are git, svn, hg etc for that
+#
+
 PROJECT_PATH="my-project-folder-name"
 
 BETA_PATH="/var/www/beta.$PROJECT_PATH/"
