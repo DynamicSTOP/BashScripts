@@ -8,3 +8,6 @@ tar --list --verbose --file=30days.tgz
 
 # extract files
 tar -xvzf 30days.tgz
+
+# get ips connected to nginx
+netstat -ntupa | grep nginx | sed  -e 's|\s\{1,\}| |g'| cut -d" " -f5| cut -d":" -f1 | sort|uniq -c
