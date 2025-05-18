@@ -25,6 +25,10 @@ export DISPLAY=:0
 export XAUTHORITY=/home/leonid/.Xauthority
 /usr/bin/xsetwacom --set "Wacom Intuos Pro M Finger touch" Touch off
 
+# If you get errors regarding display can't be open or smth
+# run this in console
+echo $DISPLAY
+# then check if it's same as in export (thanks debian)
 
 # now make a file /etc/udev/rules.d/99-snap.wacom.rules with following line  (use your username and number from before)
 SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="056a", ATTRS{idProduct}=="0357", OWNER="myuser", RUN+="/usr/bin/su myuser /home/myuser/wacom.sh"
